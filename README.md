@@ -11,11 +11,11 @@ experimenting, I have now rewritten the program for the Arduino Uno.
 ## Parts
 - DCF77 Receiver Module
 
-![Receiver](dcf77receiver.jpg) 
+![Receiver](images/dcf77receiver.jpg) 
 
 - Arduino UNO R3
 
-![UNO](arduinoUnoR3.jpg)
+![UNO](images/arduinoUnoR3.jpg)
 
 The receiver module has 2 open collector outputs, one of which
  provides an inverted signal. For the gameport I had built a 
@@ -25,7 +25,7 @@ The receiver module has 2 open collector outputs, one of which
  Arduino, although an input with pullup could also be connected 
  directly to the output of the receiver module.
 
-![Combi](dcf77combi.jpg)
+![Combi](images/dcf77combi.jpg)
 
 ## Program
 The decoding of the DCF77 time signal has already been described by many other authors and information about it can be found on the Internet.
@@ -35,7 +35,18 @@ The decoding of the DCF77 time signal has already been described by many other a
   - [PTB DCF77 time code](https://www.ptb.de/cms/en/ptb/fachabteilungen/abt4/fb-44/ag-442/dissemination-of-legal-time/dcf77/dcf77-time-code.html)
   - [C-MAX Facts about DCF77](http://www.c-max-time.com/tech/dcf77.php)
 
-  The program is operated via a CLI menu. It displays the incoming bits of the time 
-  signal. As soon as the time telegram is completely received, time and date are also 
-  output in plain text.
+## User Interface
+
+The program is operated via a CLI menu.
+
+![Telegram](images/cliTimetelegram.jpg)
+
+After a parity error the bit numbering and the scheme of the time telegram 
+is displayed. Then the incoming bits are displayed and at the end of the
+full minute the time information in plain text.
+
+If the `[t]` key is now pressed, the mode changes and the time information is 
+displayed every 5 seconds. This interval can be changed with key `[i]`.
+
+![Plain](images/cliTime.jpg)
 
